@@ -31,12 +31,27 @@ void	set_index(t_list **stack);
 void	sort_big(t_list **stack_a, t_list **stack_b);
 void	sort_small(t_list **stack_a, t_list **stack_b);
 void	ft_error(char *msg, char **args, int argc);
-void	ft_free(void **vec);
+void	ft_free(void **mat);
+int		rotate_stack(t_list **stack);
+size_t	count_nums(char const *s, char c);
 int		get_max_index(t_list **stack);
 int		get_min_index(t_list **stack);
+
 int		is_sorted(t_list **stack);
-int		invalid_input(char *str);
-size_t	count_nums(char const *s, char c);
+int		push_stack(t_list **stack_dst, t_list **stack_src);
+int		rev_rotate_stack(t_list **stack);
+
+int		sa(t_list **stack_a);
+int		sb(t_list **stack_b);
+int		ss(t_list **stack_a, t_list **stack_b);
+int		pa(t_list **stack_a, t_list **stack_b);
+int		pb(t_list **stack_b, t_list **stack_a);
+int		ra(t_list **stack_a);
+int		rb(t_list **stack_b);
+int		rr(t_list **stack_a, t_list **stack_b);
+int		rra(t_list **stack_a);
+int		rrb(t_list **stack_b);
+int		rrr(t_list **stack_a, t_list **stack_b);
 
 /* moves funcs */
 int		swap_stack(t_list **stack);

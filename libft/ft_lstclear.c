@@ -22,8 +22,7 @@ int	ft_lstclear(t_list **lst, int (*del)(int *))
 	while (element != NULL)
 	{
 		tmp = element->next;
-		ft_
-		delone(element, del);
+		ft_delone(element, del);
 		element = tmp;
 	}
 	*lst = NULL;

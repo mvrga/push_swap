@@ -10,67 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/push_swap.h"
 
-int	is_sorted(t_list **stack)
+int	swap_stack(t_list **stack)
 {
 	t_list	*head;
+	t_list	*next;
+	int		tmp_value;
+	int		tmp_index;
 
+	if (ft_lstsize(*stack) < 2)
+		return (-1);
 	head = *stack;
-	while (head && head->next)
-	{
-		if (head->value > head->next->value)
-			return (0);
-		head = head->next;
-	}
-	return (1);
+	next = head->next;
+	if (!head && !next)
+		return (-1);
+	tmp_value = head->value;
+	tmp_index = head->index;
+	head->value = next->value;
+	head->index = next->index;
+	next->value = tmp_value;
+	next->index = tmp_index;
+	return (0);
 }
 
-void	free_stack(t_list **stack)
+int	sa(t_list **stack_a)
 {
-	t_list	*head;
-	t_list	*tmp;
-
-	head = *stack;
-	while (head)
-	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
-	}
-	free(stack);
+	if (swap_stack(stack_a) == -1)
+		return (-1);
+	ft_putendl_fd("sa", 1);
+	return (0);
 }
 
-void	init_stack(t_list **stack, int argc, char **argv)
+int	sb(t_list **stack_b)
 {
-	t_list	*new;
-	char	**args;
-	int		i;
-
-	i = 0;
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
-	{
-		i = 1;
-		args = argv;
-	}
-	while (args[i])
-	{
-		new = ft_lstnew(ft_atoi(args[i]));
-		ft_lstadd_back(stack, new);
-		i++;
-	}
-	set_index(stack);
-	if (argc == 2)
-		ft_free((void **)args);
+	if (swap_stack(stack_b) == -1)
+		return (-1);
+	ft_putendl_fd("sb", 1);
+	return (0);
 }
 
-void	sort_stack(t_list **stack_a, t_list **stack_b)
+int	ss(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(*stack_a) <= 5)
-		sort_small(stack_a, stack_b);
-	else
-		sort_big(stack_a, stack_b);
+	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+		return (-1);
+	swap_stack(stack_a);
+	swap_stack(stack_b);
+	ft_putendl_fd("ss", 1);
+	return (0);
 }

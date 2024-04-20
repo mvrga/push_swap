@@ -6,11 +6,11 @@
 /*   By: marcribe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 22:50:47 by marcribe          #+#    #+#             */
-/*   Updated: 2024/03/19 22:50:56 by marcribe         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:24:21 by marcribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+//#include "../libft/libft.h"
 #include "../includes/push_swap.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)

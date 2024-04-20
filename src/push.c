@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/push_swap.h"
 
 int	push_stack(t_list **stack_dst, t_list **stack_src)

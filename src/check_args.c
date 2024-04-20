@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/push_swap.h"
 
 static int	has_duplicate(int num, char **argv, int i)
@@ -58,7 +57,7 @@ void	check_args(char **argv, int argc)
 	char	**args;
 
 	i = 0;
-	if (argc == 2 && invalid_input(argv[1]))
+	if (argc == 2)
 	{
 		write(2, "Error\n", 6);
 		exit(0);
